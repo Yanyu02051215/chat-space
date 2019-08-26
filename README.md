@@ -39,8 +39,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |group|integer|null: false, foreign_key: true|
-|email|string|null: false, foreign_key: true|
-|encrypted-password|string|null: false, foreign_key: true|
+|email|string|null: false|
+|encrypted-password|string|null: false|
+|nickname|string|null: false|
 
 
 ### Association
