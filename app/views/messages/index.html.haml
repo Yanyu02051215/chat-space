@@ -1,65 +1,29 @@
-.header
-  .header__text
-    グループを作成しました
-.contents
-  .contents__left
-    .contents__left__top
-      .contents__left__top__box
-        .contents__left__top__box__text
-          test-user
-        .contents__left__top__box__image 
-          .contents__left__top__box__image__cog
-          .fa.fa-cog
-          .contents__left__top__box__image__edit
-          .fa.fa-edit
-
-    .contents__left--bottom
-      .contents__left--bottom__group
-        .contents__left--bottom__group__name
-        test
-        .contents__left--bottom__group__message
-        さようなら
-      .contents__left--bottom__group
-        .contents__left--bottom__group__name
-          SAMPLE-group
-        .contents__left--bottom__group__message
-          hello!
-      .contents__left--bottom__group
-        .contents__left--bottom__group__name
-          example
-        .contents__left--bottom__group__message
-          まだメッセージがありません
-  .contents__right
-    .contents__right__header
-      .contents__right__header__left-box
-        .contents__right__header__left-box__current-group
-          text-group
-        .contents__right__header__left-box__member-list
-          text-message
-      .contents__right__header__edit
-        Edit
-    .contents__right__message
-      .contents__right__message__data-message
-        .contents__right__message__data-message__user
-          .contents__right__message__data-message__user__name
-          test-user
-          .contents__right__message__data-message__user__date
-          2019/9/1(SUN) 18:00:00
-        .contents__right__message__data-message__text
-          こんにちは
-      .contents__right__message__data-message
-        .contents__right__message__data-message__user
-          .contents__right__message__data-message__user__name
-          test-user
-          .contents__right__message__data-message__user__date
-          2019/9/1(SUN) 18:00:00
-        .contents__right__message__data-message__text
-          さようなら
-    .contents__right__footer
-      .contents__right__footer__left-box
-        .contents__right__footer__left-box__text
-          type.message
-        .contents__right__footer__left-box__image
-          .fa.fa-image
-      .contents__right__footer__right-box
-        Send
+.wrapper
+  = render 'shared/side_bar'
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          = @group.name
+        %ul.left-header__members
+          Member：
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      = render @messages
+  
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
