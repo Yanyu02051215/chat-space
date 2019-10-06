@@ -13,7 +13,7 @@ $(function(){
     <p class="lower-message__content">
     ${message.content}
     </p>
-    
+    <img class="lower-message__image" src="${message.image.url}">
     </div>`
     
     return html;
@@ -28,15 +28,14 @@ $(function(){
       url: url,
       type: "post",
       data: formData,
-      dataType: 'json',
+      dataType: "json",
       processData: false,
       contentType: false
     })
     .done(function(message){
       var html = buildMessage(message);
       $('.messages').append(html)
-      $('#message_content').val('')
-      
+      $("#new_message")[0].reset();
     })
     .fail(function(){
       alert('メッセージを送信できません');

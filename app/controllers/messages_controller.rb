@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     @message = @group.messages.new(message_params)
     respond_to do |format|
     if @message.save
-      format.html  {redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
+      format.html {redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'}
       format.json
     else
       @messages = @group.messages.includes(:user)
