@@ -73,7 +73,7 @@ $(function(){
       $('.message').append(insertHTML)
     })
     .fail(function() {
-      console.log('error');
+      alert('error');
     });
     setInterval(reloadMessages, 5000);
    });
