@@ -1,0 +1,28 @@
+$text-color: #434A54;
+$sub-text-color: #999999;
+$button-color: #38AEF0;
+
+// フラッシュメッセージ用カラー定義
+$white: #fff;
+$side_blue_dark: #253141;
+$side_blue_light: #2f3e51;
+$light_blue: #38AEF0;
+$light_gray: #999;
+$black: #434a54;
+$alert_orange: #F35500;
+
+
+
+@mixin side-p {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+@mixin side-w {
+  width: 300px;
+}
+
+@mixin main-p {
+  padding-right: 40px;
+  padding-left: 40px;
+}

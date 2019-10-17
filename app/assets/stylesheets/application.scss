@@ -1,12 +1,32 @@
+@import "./reset";
 @import "font-awesome";
-@import "config/colors";
-@import "config/reset";
-@import "config/font-size.scss";
-@import "mixins/mixin";
-@import "mixins/vendor_prefix";
+@import "user";
+@import "./_side";
+@import "main";
+@import "variable";
 @import "modules/flash";
-@import "modules/user";
-@import "modules/group";
-@import "modules/side_bar";
-@import "modules/chat";
-@import "messages/messages.scss";
+@import "groups/group";
+
+// .news {
+// 	background-color: #38AEF0;
+// 	color: #ffffff;
+// 	text-align: center;
+// }
+
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+
+
+:root {
+  --main-gutter: 20px;
+  --top-padding: padding-top: 35px;
+}
+
+
+.chat {
+	display: flex;
+	height: 100vh;
+}
+

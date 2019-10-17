@@ -1,26 +1,11 @@
-.wrapper
-  = render 'shared/side_bar'
-  .chat
-    .header
-      .left-header
-        .left-header__title
-          = @group.name
-        %ul.left-header__members
-          Member：
-          - @group.users.each do|user|
-            %li.left-header__members__member #{user.name}
-      = link_to edit_group_path(@group) do
-        .right-header
-          .right-header__button
-          Edit
-    .messages
-      = render @messages
-  
-    .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-        .form__mask
-          = f.label :image, class: 'form__mask__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+.chat
+  .chat__side
+    = render partial: "chat_side_up"
+    = render partial: "chat_side_list"
+  .chat__main
+    .chat__main__border
+    = render partial: "chat_main_header"
+    .main__message
+      - @messages.each do |m|
+        = render partial: "chat_main_message", locals: {message: m}
+      = render partial: "chat_main_footer"
