@@ -1,7 +1,7 @@
 $(document).on('turbolinks:load', (function() {
 
   var search_list = $("#user-search-result");
-  var member_list = $(".chat-group-user__name");
+  var member_list = $("#chat-group-users");
 
 
 
