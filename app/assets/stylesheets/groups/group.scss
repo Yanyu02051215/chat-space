@@ -82,7 +82,9 @@
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid #ddd;
-    margin-left:250px;
+    &.js-chat-member{
+      margin-left:250px;
+    }
     &:after {
       content: "";
       clear: both;
