@@ -33,13 +33,13 @@
       .chat-group-user.clearfix#chat-group-user-space
         %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "#{current_user.id}"}
         %p.chat-group-user__name
-         = current_user.name
+          = current_user.name
      
     -group.users.each do |user|
-     -if current_user.name != user.name
+      -if current_user.name != user.name
       #chat-group-users.chat-group-user-22.chat-group-user.clearfix
-          %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "#{user.id}"}
-          %p.chat-group-user__name
+        %input{:name => "chat_group[user_ids][]", :type => "hidden", :value => "#{user.id}"}
+        %p.chat-group-user__name
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
