@@ -8,4 +8,4 @@
     .main__message
       - @messages.each do |m|
         = render partial: "chat_main_message", locals: {message: m}
-      = render partial: "chat_main_footer"
+    = render partial: "chat_main_footer"
