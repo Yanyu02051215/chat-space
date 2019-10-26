@@ -30,6 +30,8 @@
   background-color: white;
   padding-top: 35px;
   display: flex;
+  padding-right:40px;
+  padding-left:40px;
   &__edit-button {
     background-color: white;
     border:  1px solid $button-color;
@@ -53,9 +55,11 @@
 .main__message {
   box-sizing: border-box;
   background-color: #ffffff;
-  height: calc(100vh - 245px);
+  height: calc(100vh - 180px);
   padding-top: 75px; 
   overflow: scroll;
+  padding-right:40px;
+  padding-left:40px;
   
   &__box {
     margin-bottom: 40px;
@@ -88,8 +92,9 @@
   padding-top: 20px;
   padding-left: 10px;
   display: block;
-  // position: absolute;
-  // bottom: 0;
+  padding-right:40px;
+  padding-left:40px;
+  bottom: 0;
   &__text {
     color: $text-color;
     width: 760px;

@@ -50,27 +50,27 @@ $(function() {
 	  });
   });
 
-  //   var interval = setInterval(function(){
-  //     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-  //       var last_message_id = $('.main__message__box').filter(":last").data('messageId')
-  //   $.ajax({
-  //     url: location.href.json,
-  //     data: { last_id: last_message_id },
-  //     type: "GET",
-  //     dataType: 'json'
-  //   })
-  //   .done(function(data){
-  //     var insertHTML = '';
-  //     data.forEach(function(message){
-  //     insertHTML = buildHTML(message);         
-  //     $('.main__message').append(insertHTML)
-  //     ScrollToNewMessage();
-  //     });
-  //   })
-  //   .fail(function(data){
-  //     alert('自動更新に失敗しました');
-  //   })
-  // } else{
-  //     clearInterval(interval);
-  //   }} , 5000 )
+    var interval = setInterval(function(){
+      if (window.location.href.match(/\/groups\/\d+\/messages/)){
+        var last_message_id = $('.main__message__box').filter(":last").data('messageId')
+    $.ajax({
+      url: location.href.json,
+      data: { last_id: last_message_id },
+      type: "GET",
+      dataType: 'json'
+    })
+    .done(function(data){
+      var insertHTML = '';
+      data.forEach(function(message){
+      insertHTML = buildHTML(message);         
+      $('.main__message').append(insertHTML)
+      ScrollToNewMessage();
+      });
+    })
+    .fail(function(data){
+      alert('自動更新に失敗しました');
+    })
+  } else{
+      clearInterval(interval);
+    }} , 5000 )
 });
