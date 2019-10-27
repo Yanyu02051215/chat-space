@@ -98,10 +98,11 @@
   &__text {
     color: $text-color;
     width: 760px;
+    border-style: none;
 
   }
   &__form__mask{
-  
+    background-color: white;
   }
   
   &__send-button {
