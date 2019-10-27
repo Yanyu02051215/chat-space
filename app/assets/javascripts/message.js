@@ -1,7 +1,8 @@
+$(document).on('turbolinks:load', function() {
+
 $(function() {
   
   function buildHTML(message){
-    console.log(message)
     image = ( message.image ) ? `<img class= "lower-message__image" src=${message.image} >` : "";
   	  var html =
   	    `<div class="main__message__box" data-message-id= "${message.id}">
@@ -47,36 +48,39 @@ $(function() {
 	  	$('.main__footer__text').val('');
       $(".main__footer__send-button").prop('disabled', false);
       $("#new_message")[0].reset();
+      } else {
+        alert("エラーです")
       }
 	  })
 	  .fail(function(){
 	    alert('error');
 	  });
   });
-
-    var interval = function(){
-      if (window.location.href.match(/\/groups\/\d+\/messages/)){
-        var last_message_id = $('.main__message__box').filter(":last").data('message-id')
-    $.ajax({
-      url: location.href.json,
-      data: { last_id: last_message_id },
-      type: "GET",
-      dataType: 'json'
-    })
-    .done(function(data){
-      if(data.length !== 0) {
-        var insertHTML = '';
-        data.forEach(function(message){
-        insertHTML = buildHTML(message);         
-        $('.main__message').append(insertHTML)
-        ScrollToNewMessage();
-        });
-      }
-    })
-    .fail(function(data){
-      alert('自動更新に失敗しました');
-    })
-  }
+  var interval = function(){
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.main__message__box').filter(":last").data('message-id')
+  $.ajax({
+    url: location.href.json,
+    data: { last_id: last_message_id },
+    type: "GET",
+    dataType: 'json'
+  })
+  .done(function(data){
+    if(data.length !== 0) {
+      var insertHTML = '';
+      data.forEach(function(message){
+      insertHTML = buildHTML(message);         
+      $('.main__message').append(insertHTML)
+      ScrollToNewMessage();
+      });
+    }
+  })
+  .fail(function(data){
+    alert('自動更新に失敗しました');
+  })
+}
 }
 setInterval(interval , 5000 );
+
+});
 });
