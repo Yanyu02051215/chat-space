@@ -50,6 +50,7 @@ $(function() {
       $("#new_message")[0].reset();
       } else {
         alert("エラーです")
+        $(".main__footer__send-button").prop('disabled', false);
       }
 	  })
 	  .fail(function(){
