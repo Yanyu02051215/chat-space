@@ -97,7 +97,7 @@
   bottom: 0;
   &__text {
     color: $text-color;
-    width: 760px;
+    width: 900px;
     border-style: none;
 
   }
@@ -112,7 +112,7 @@
       @include side-p;
       text-align: center;
       line-height: 50px;
-      margin-left: 60px;
+      margin-left: 20px;
 
   }
 }
