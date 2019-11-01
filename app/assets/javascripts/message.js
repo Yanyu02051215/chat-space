@@ -75,7 +75,7 @@ $(function() {
         })
         $('.main__message').animate({scrollTop: $('.main__message')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
       })
-      .fail(function (messages) {
+      .fail(function () {
         alert('自動更新に失敗しました');//ダメだったらアラートを出す
       });
     }
