@@ -73,7 +73,7 @@ $(function() {
           insertHTML = buildHTML(message); //メッセージが入ったHTMLを取得
           $('.main__message').append(insertHTML);//メッセージを追加
         })
-        $('.main__message').animate({scrollTop: $('.main__message')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
+        // $('.main__message').animate({scrollTop: $('.main__message')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
       })
       .fail(function () {
         alert('自動更新に失敗しました');//ダメだったらアラートを出す
